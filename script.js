@@ -35,8 +35,17 @@ img:"img/yogur-mora2.jpeg"},
 {nombre:"Yogur de Piña",precio:8000,
 img:"img/yogur-piña.jpeg"},
 
+{nombre:"Yogur de melocoton",precio:8000,
+img:"img/yogur-melocoton.jpeg"},
+
 {nombre:"Bolis de Fresa",precio:2000,
 img:"img/bolis-fresa.jpeg"},
+
+{nombre:"Bolis de durazno",precio:2000,
+img:"img/bolis-durazno.jpeg"},
+
+{nombre:"Bolis de piña",precio:2000,
+img:"img/bolis-piña.jpeg"},
 
 {nombre:"Bolis de Mora",precio:2000,
 img:"img/bolis-mora.jpeg"},
@@ -398,4 +407,5 @@ document.body.classList.add("dark");
 =====================================================*/
 cargarProductos();
 actualizar();
+
 cargarHistorial();
