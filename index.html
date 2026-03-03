@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<!-- ======================================================
+     CONFIGURACIÓN GENERAL DEL DOCUMENTO
+====================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delicias Naturales</title>
+
+<!-- Hoja de estilos principal -->
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<!-- ======================================================
+     HEADER / ENCABEZADO PRINCIPAL
+====================================================== -->
+<header>
+
+<div class="logo">
+
+<div class="logo-circle">DN</div>
+
+<div>
+<h1>Delicias Naturales</h1>
+<p><strong>Sabor 100% Casero y Natural</strong></p>
+<p>Saborea lo hecho en casa</p>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ======================================================
+     MENÚ DE NAVEGACIÓN
+====================================================== -->
+<nav>
+
+<button onclick="mostrar('inicio')">Inicio</button>
+
+<button onclick="mostrar('productos')">
+Productos
+</button>
+
+<button onclick="mostrar('empresa')">
+Empresa
+</button>
+
+<button onclick="mostrar('carrito')">
+Carrito
+<span id="contador">0</span>
+</button>
+
+<button onclick="mostrar('historial')">
+Historial
+</button>
+
+<button onclick="mostrar('contacto')">
+Contacto
+</button>
+
+<!-- BOTÓN MODO OSCURO -->
+<button onclick="toggleDarkMode()" id="darkBtn">
+🌙
+</button>
+
+</nav>
+
+
+<!-- ======================================================
+     SECCIÓN INICIO
+====================================================== -->
+<section id="inicio" class="page">
+
+<h2>Bienvenidos</h2>
+
+<p>
+En Delicias Naturales creemos que una buena alimentación
+es la base fundamental para una vida saludable.
+Nuestro proyecto nace con el propósito de ofrecer productos
+100% caseros elaborados con ingredientes naturales.
+</p>
+
+<p>
+Cada uno de nuestros yogures y bolis es preparado
+con frutas frescas conservando el auténtico sabor
+hecho en casa.
+</p>
+
+<p>
+Trabajamos con responsabilidad y compromiso
+para brindar productos frescos y saludables.
+</p>
+
+<ul>
+<li>Ingredientes naturales</li>
+<li>Sabores frescos</li>
+<li>Calidad artesanal</li>
+<li>Producción local</li>
+<li>Compromiso con la salud</li>
+</ul>
+
+</section>
+
+
+<!-- ======================================================
+     SECCIÓN PRODUCTOS
+====================================================== -->
+<section id="productos" class="page">
+
+<h2>Productos</h2>
+
+<!-- BUSCADOR -->
+<input
+type="text"
+id="buscador"
+placeholder="Buscar producto..."
+onkeyup="filtrarProductos()"
+class="buscador">
+
+<!-- FILTROS -->
+<div class="filtros">
+
+<button onclick="filtrarCategoria('todos')">
+Todos
+</button>
+
+<button onclick="filtrarCategoria('Yogur')">
+Yogures
+</button>
+
+<button onclick="filtrarCategoria('Boli')">
+Bolis
+</button>
+
+</div>
+
+<!-- CONTENEDOR DINÁMICO -->
+<div id="contenedorProductos"
+class="productos"></div>
+
+</section>
+
+
+<!-- ======================================================
+     SECCIÓN EMPRESA
+====================================================== -->
+<section id="empresa" class="page">
+
+<h2>Nuestra Empresa</h2>
+
+<h3>Misión</h3>
+<p>
+Ofrecer productos alimenticios saludables,
+frescos y de alta calidad.
+</p>
+
+<h3>Visión</h3>
+<p>
+Ser una empresa líder en alimentos naturales
+a nivel regional.
+</p>
+
+<h3>Valores</h3>
+
+<ul>
+<li>Responsabilidad</li>
+<li>Calidad</li>
+<li>Honestidad</li>
+<li>Compromiso</li>
+<li>Trabajo en equipo</li>
+<li>Sostenibilidad</li>
+</ul>
+
+</section>
+
+
+<!-- ======================================================
+     CARRITO DE COMPRAS
+====================================================== -->
+<section id="carrito" class="page">
+
+<h2>Carrito</h2>
+
+<ul id="listaCarrito"></ul>
+
+<h3 id="total"></h3>
+
+<button
+class="whatsapp-btn"
+onclick="enviarPedido()">
+Enviar Pedido por WhatsApp
+</button>
+
+<button onclick="vaciarCarrito()">
+Vaciar carrito
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     HISTORIAL DE PEDIDOS
+====================================================== -->
+<section id="historial" class="page">
+
+<h2>Historial</h2>
+
+<ul id="listaHistorial"></ul>
+
+</section>
+
+
+<!-- ======================================================
+     CONTACTO
+====================================================== -->
+<section id="contacto" class="page">
+
+<h2>Contacto</h2>
+
+<p>📞 3234635361</p>
+<p>Apartadó – Antioquia</p>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer>
+
+© 2026 Delicias Naturales
+
+</footer>
+
+
+<!-- ======================================================
+     NOTIFICACIONES VISUALES
+====================================================== -->
+<div id="notificacion"></div>
+
+
+<!-- ======================================================
+     SCRIPT PRINCIPAL
+====================================================== -->
+<script src="script.js"></script>
+
+</body>
+</html>

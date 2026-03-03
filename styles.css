@@ -1,0 +1,353 @@
+/* =====================================================
+   RESET GENERAL
+=====================================================*/
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* =====================================================
+   VARIABLES DE COLOR (CLARO / OSCURO)
+   👉 Permiten cambiar TODO el sitio automáticamente
+=====================================================*/
+:root{
+
+--bg-general:white;
+--text-color:#333;
+--card-bg:white;
+--nav-bg:#e8f5e9;
+--primary:#2e7d32;
+--header-gradient:linear-gradient(135deg,#1b5e20,#4caf50);
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark{
+
+--bg-general:#121212;
+--text-color:#f1f1f1;
+--card-bg:#1e1e1e;
+--nav-bg:#1a1a1a;
+--primary:#66bb6a;
+--header-gradient:linear-gradient(135deg,#000,#2e7d32);
+
+}
+
+
+/* =====================================================
+   BODY
+=====================================================*/
+body{
+
+font-family:'Segoe UI',sans-serif;
+color:var(--text-color);
+
+background:
+linear-gradient(rgba(255,255,255,.92),
+rgba(255,255,255,.92)),
+url("https://images.unsplash.com/photo-1490818387583-1baba5e638af");
+
+background-size:cover;
+background-attachment:fixed;
+
+transition:.4s;
+}
+
+/* Fondo oscuro real */
+body.dark{
+background:#121212;
+}
+
+
+/* =====================================================
+   HEADER
+=====================================================*/
+header{
+
+background:var(--header-gradient);
+color:white;
+padding:30px;
+text-align:center;
+transition:.4s;
+}
+
+/* Logo */
+.logo{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+}
+
+.logo-circle{
+width:70px;
+height:70px;
+background:white;
+color:var(--primary);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:bold;
+}
+
+
+/* =====================================================
+   NAVBAR
+=====================================================*/
+nav{
+
+background:var(--nav-bg);
+text-align:center;
+padding:10px;
+position:sticky;
+top:0;
+z-index:1000;
+transition:.4s;
+}
+
+nav button{
+
+background:var(--primary);
+color:white;
+border:none;
+padding:10px 15px;
+margin:5px;
+border-radius:20px;
+cursor:pointer;
+position:relative;
+
+transition:.3s;
+}
+
+nav button:hover{
+transform:translateY(-2px);
+}
+
+
+/* CONTADOR CARRITO */
+#contador{
+background:red;
+border-radius:50%;
+padding:3px 8px;
+font-size:12px;
+position:absolute;
+top:-5px;
+right:-5px;
+display:none;
+}
+
+
+/* =====================================================
+   SECCIONES
+=====================================================*/
+.page{
+
+display:none;
+max-width:1200px;
+margin:40px auto;
+background:var(--card-bg);
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+
+animation:fade .5s ease;
+transition:.4s;
+}
+
+
+/* =====================================================
+   PRODUCTOS GRID
+=====================================================*/
+.productos{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+}
+
+
+/* =====================================================
+   TARJETAS
+=====================================================*/
+.card{
+
+background:var(--card-bg);
+border-radius:15px;
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-body{
+padding:15px;
+text-align:center;
+}
+
+.card button{
+
+background:#4caf50;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.card button:hover{
+transform:scale(1.1);
+}
+
+
+/* =====================================================
+   BOTÓN WHATSAPP
+=====================================================*/
+.whatsapp-btn{
+
+background:#25D366;
+color:white;
+padding:12px;
+border:none;
+border-radius:30px;
+width:100%;
+margin-top:15px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.whatsapp-btn:hover{
+transform:scale(1.05);
+}
+
+
+/* =====================================================
+   FOOTER
+=====================================================*/
+footer{
+
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+
+/* =====================================================
+   NOTIFICACIÓN
+=====================================================*/
+#notificacion{
+
+position:fixed;
+bottom:20px;
+right:20px;
+
+background:var(--primary);
+color:white;
+
+padding:15px;
+border-radius:10px;
+
+opacity:0;
+transition:.4s;
+}
+
+
+/* =====================================================
+   BUSCADOR
+=====================================================*/
+.buscador{
+
+width:100%;
+padding:12px;
+margin-bottom:20px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+
+/* =====================================================
+   FILTROS
+=====================================================*/
+.filtros{
+margin-bottom:20px;
+text-align:center;
+}
+
+.filtros button{
+
+margin:5px;
+padding:8px 15px;
+border:none;
+background:var(--primary);
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+=====================================================*/
+
+/* Aparición suave páginas */
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Animación contador carrito */
+@keyframes salto{
+0%{transform:scale(1);}
+50%{transform:scale(1.4);}
+100%{transform:scale(1);}
+}
+
+.animar{
+animation:salto .3s;
+}
+
+/* ===== IMÁGENES PRODUCTOS ===== */
+
+.card img{
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card{
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card img{
+    transition: transform 0.3s ease;
+}
+
+.card:hover img{
+    transform: scale(1.05);
+}
